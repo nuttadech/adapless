@@ -1,0 +1,260 @@
+// Adaptless.co// // // // // // // // 
+// 	1. Reset default browser styles // 
+// 	2. Colors & Typography          // 
+// 	3. Basic classes and elements   // 
+// 	5. Header                       // 
+// 	6. Sliders                      // 
+// 	7. Tabs,Accordions,toggles      // 
+// 	8. Carousels                    // 
+// 	9. Twitter Feed                 // 
+// 	10. Lists and navigations       // 
+// 	11. Buttons                     // 
+// 	12. Tables                      // 
+// 	13. Icons                       // 
+// 	14. Main content elements       // 
+// 	15. Forms                       // 
+// 	16. Footer                      // 
+// 	17. Animations                  //  
+// 	18. Responsive changes          // 
+// 	19. Retina ready                // 
+// // // // // // // // // // // // // 
+
+// 	1. Reset default browser styles
+@import url("../../assets/css/reset.css");
+// 	2. Colors & Typography     
+@import url("../../assets/css/color.less");
+@import url("../../assets/css/transition.less");
+
+// 	2. Basic classes and elements 
+*,html,body{
+	font-family: @font--open-sans;
+	color: @black;
+	font:12/18px; 
+	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+::selection {
+	background: @blue;
+	color: @white;
+}
+::-moz-selection {
+	background: @blue;
+	color: @white;
+}
+a{
+	color: @orange; 
+}
+a:hover{
+	color: darken(@orange, 10%);
+	-webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+.header--logo{
+	font-family: @font--open-sans;
+	a{
+		color: @white;
+	}
+}
+@pd-std:10px 0;
+.header--nav{
+	background: @blue;
+	height: auto;
+	width: 100%;
+	overflow: hidden;
+}
+.header--nav{
+	float: left;
+	h1{
+		float: left;
+		padding: 10px 15px;
+		margin: 0;
+	}
+}
+.header--nav__menu{
+	float: left;
+	a{
+		color: @white;
+	}
+	a:hover{
+		color: @yellow;
+	}
+	li{		
+		display: table-cell;
+		vertical-align: middle;
+	}	
+	li a{
+		display: inline-block;
+		padding: 25px 15px;
+		text-transform: uppercase;
+	}
+	li:hover a{
+		background: lighten(@blue, 10%);
+		-webkit-transition: all 0.5s @linear;
+    	-moz-transition: all 0.5s @linear;
+    	-o-transition: all 0.5s @linear;
+    	transition: all 0.5s @linear;
+	}	
+}
+button{
+	padding:15px 25px;
+	background:@blue;
+	color:@white;
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	-webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    &.green-button{
+    	background: @green;
+    }
+    &.red-button{
+    	background: @red;
+    }
+    &.black-button{
+    	background: @black;
+    }
+
+}
+button:hover{
+	background: darken(@blue, 10%);
+}
+.container{
+	max-width: 1170px;
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+*,
+*:after,
+*:before {
+  	margin: 0;
+  	padding: 0;
+  	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+[class*='col-'] {
+  	float: left;
+  	padding: 10px;
+}
+[class*='col-']:last-of-type {
+  	padding-right: 10px;
+  	float: right;
+}
+/* Clearfix */
+.newrow:after {
+  	content: "";
+  	display: table;
+  	clear: both;
+}
+.col-12  {
+	width: 100%;
+}
+.col-11  {
+	width: 50%;
+}
+.col-10  {
+	width: 33.33%;
+}
+.col-9  {
+	width: 25%;
+}
+.col-8  {
+	width: 20%;
+}
+.col-7  {
+	width: 16.6666666667%;
+}
+.col-6  {
+	width: 14.2857142857%;
+}
+.col-5  {
+	width: 12.5%;
+}
+.col-4  {
+	width: 11.1111111111%;
+}
+.col-3 {
+	width: 10%;
+}
+.col-2 {
+	width: 9.09090909091%;
+}
+.col-1 {width: 8.33%;}
+
+
+/*base tablet to small desktop styles*/
+@media (min-width: 800px) and (max-width: 1100px) {
+  .col-2,
+  .col-7,.col-12  {
+    width: 100%;
+  }
+ 
+  .col-4,
+  .col-8,
+  .col-10
+  {
+    width: 50%;
+  }
+}
+/*base tablet styles*/
+@media (max-width: 800px) {
+.col-4,
+  .col-6,
+  .col-8,
+  .col-10
+  {
+    width: 50%;
+  }
+ 
+  .col-1,
+  .col-2,
+  .col-3,
+  .col-5,
+  .col-7,
+  .col-9,
+  .col-11.col-12  {
+    width: 100%;
+  }
+}
+/*base mobile styles - everything 100%*/
+@media (max-width: 480px) {
+  .col-1,
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-5,
+  .col-6,
+  .col-7,
+  .col-8,
+  .col-9,
+  .col-10,
+  .col-11,
+  .col-12 {
+    width: 100%;
+  }
+}
+@media (max-width: 320px) {
+  .col-1,
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-5,
+  .col-6,
+  .col-7,
+  .col-8,
+  .col-9,
+  .col-10,
+  .col-11,
+  .col-12 {
+    width: 100%;
+  }
+}
